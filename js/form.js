@@ -4,31 +4,31 @@ butaoAdicionar.addEventListener("click", function(event){
 	event.preventDefault(); // previne o comportamento padrão
 	
 	var form = document.querySelector("#form-adiciona");
-	
 	var paciente = obtemPacienteDoFormulario(form);
 
-	var pacienteTr = montaTr(paciente);
-
 	var erros = validaPaciente(paciente);
-
 	// verifica paciente invalido
 	if(erros.length > 0){
 		exibeMensagensDeErro(erros);
 		return; // sai da funcao
 	}
 
-	// adiciona paciente na tabela
-	var tabela = document.querySelector("#tabela-pacientes");
-
-	tabela.appendChild(pacienteTr);
+	// chamando a nova funcao adicionaPacienteNaTabela
+	adicionaPacienteNaTabela(paciente);
 
 	form.reset();
 
 	var mensagensErro = document.querySelector("#mensagens-erro");
-
 	mensagensErro.innerHTML = "";
 
 });
+
+function adicionaPacienteNaTabela(paciente){
+	var pacienteTr = montaTr(paciente);
+	// adiciona paciente na tabela
+	var tabela = document.querySelector("#tabela-pacientes");
+	tabela.appendChild(pacienteTr);
+}
 
 function obtemPacienteDoFormulario(form){
 
