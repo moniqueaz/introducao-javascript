@@ -18,14 +18,14 @@ for(var i = 0; i < pacientes.length; i++){
 	var tdIMC = paciente.querySelector(".info-imc");
 
 	if(!pesoEhValido){
-		console.log("Peso inválido");
+		//console.log("Peso inválido");
 		tdIMC.textContent = "Peso Inválido";
 		pesoEhValido = false;
 		paciente.classList.add("paciente-invalido");
 	}
 
 	if(!alturaEhValido){
-		console.log("Altura inválido");
+		//console.log("Altura inválido");
 		tdIMC.textContent = "Altura Inválido";
 		alturaEhValido = false;
 		paciente.classList.add("paciente-invalido");
@@ -59,4 +59,5 @@ function validaAltura(altura){
 		return false;
 	}
 }
+
 
